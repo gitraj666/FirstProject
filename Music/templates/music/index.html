@@ -1,0 +1,13 @@
+<!-- Loads the path for static files -->
+{% extends 'music/base.html' %}
+{% block title %}RAJ{% endblock %}
+
+{% block body %}
+
+        <ul>
+            {% for album in object_list %}
+            <li><a href="/music/{{ album.id }}/">{{ album.album_title }} </a></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}

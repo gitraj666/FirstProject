@@ -46,8 +46,7 @@ class UserFormView(View):
             if user is not None :
 
                 if user.is_active:
-                    login(request,user)
-                    albums = Album.objects.filter(user=request.user)
+                    albums = Album.objects.all()
                     return render(request, 'music/index.html',{'albums':albums})
 
 

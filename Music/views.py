@@ -1,7 +1,7 @@
 from django.views import generic
 from .models import Album
-from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate,login
+from django.shortcuts import render
+from django.contrib.auth import authenticate
 from django.views.generic import View
 from .forms import UserForm
 
@@ -15,7 +15,7 @@ class DetailView(generic.DetailView):
     template_name = 'music/detail.html'
 
 class AlbumCreate(generic.CreateView):
-    models = Album
+    model = Album
     fields = ['artist','album_title','genre','album_logo']
 
 
